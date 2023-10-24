@@ -1,10 +1,15 @@
 package com.pluralsight;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    private static Scanner scanner= new Scanner(System.in);
+    private static List<Transaction> Transactions= new ArrayList<>();
     public static void main(String[] args) {
-        Scanner scanner= new Scanner(System.in);
         boolean isRunning = true;
 
 
@@ -23,7 +28,7 @@ public class Main {
             String choice = scanner.nextLine().toUpperCase();
             switch (choice){
                 case "D":
-                    //addDeposit();
+                    addDeposit();
                 break;
                 case "P":
                     //makePayment();
@@ -42,10 +47,16 @@ public class Main {
         }
     }
     public static void addDeposit(){
-        // prompt user for transaction info
-        // get user input for description, vendor, and amount
-        // put data into new transaction object
-        // save transaction to file
+        System.out.println("Enter description: ");
+        String description= scanner.nextLine();
+        System.out.println("Enter vendor: ");
+        String vendor = scanner.nextLine();
+        System.out.println("Enter amount: ");
+        Double amount = scanner.nextDouble();
+
+        LocalDateTime currentDate= LocalDateTime.now();
+        Transaction deposit = new Transaction(currentDate, description,vendor,amount);
+        Transactions.add(deposit);
     }
     public static void makePayment(){
         //prompt user for payment info

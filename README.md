@@ -27,14 +27,14 @@ AccountingLedger is a simple Java application that allows users to manage transa
    - Enter date and time (yyyy-MM-dd) or leave empty for the current date/time.
    - Enter description, vendor, and amount for the payment. The amount should be entered as negative.
    
-
+![Ledger Menu Screenshot](images/LedgerMenu.png)
 4. **View Ledger**:
- ![Ledger Menu Screenshot](images/LedgerMenu.png)
+ 
    - In the ledger menu, you can choose different options to view transactions, deposits, payments, view reports, and return to the main menu.
    
-
+![Reports Menu Screenshot](images/ReportsMenu.png)
 6. **Generate Reports**:
- ![Reports Menu Screenshot](images/ReportsMenu.png)
+
    - Choose specific options to generate reports based on different criteria, such as time periods, vendors, and custom searches.
    
 

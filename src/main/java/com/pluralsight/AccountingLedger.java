@@ -6,7 +6,7 @@ import com.pluralsight.utils.FileHelper;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FinancialTracker {
+public class AccountingLedger {
     //Start our application here and pass in Scanner and ArrayList to the Menus
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

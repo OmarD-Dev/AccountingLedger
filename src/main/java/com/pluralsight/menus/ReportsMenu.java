@@ -10,11 +10,11 @@ import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class RecordsMenu {
+public class ReportsMenu {
     private Scanner scanner;
     private ArrayList<Transaction> transactions;
 
-    public RecordsMenu(Scanner scanner, ArrayList<Transaction> transactions) {
+    public ReportsMenu(Scanner scanner, ArrayList<Transaction> transactions) {
         this.scanner = scanner;
         this.transactions = transactions;
     }
@@ -24,7 +24,7 @@ public class RecordsMenu {
         while (running) {
             System.out.println("""
                     =================================
-                            RECORDS MENU
+                            REPORTS MENU
                     =================================
                     Choose an option:
                     1) Month To Date

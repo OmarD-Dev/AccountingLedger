@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LedgerMenu {
-    private RecordsMenu recordsMenu;
+    private ReportsMenu recordsMenu;
     private Scanner scanner;
     private ArrayList<Transaction> transactions;
 
     public LedgerMenu(Scanner scanner, ArrayList<Transaction> transactions) {
         this.scanner = scanner;
         this.transactions = transactions;
-        this.recordsMenu = new RecordsMenu(scanner, transactions);
+        this.recordsMenu = new ReportsMenu(scanner, transactions);
     }
 
     public void startMenu() {

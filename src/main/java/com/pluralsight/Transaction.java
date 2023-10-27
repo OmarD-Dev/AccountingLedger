@@ -1,30 +1,59 @@
 package com.pluralsight;
 
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public record Transaction(LocalDateTime dateTime, String description, String vendor, double amount ) {
-    private static final DateTimeFormatter stringFormat= DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+public class Transaction {
+    private LocalDate date;
+    private LocalTime time;
+    private  String description;
+    private String vendor;
+    private Double amount;
 
-    public String getDate(){
-        DateTimeFormatter formatter= DateTimeFormatter.ofPattern("yyyy-MM-dd ");
-        return dateTime.format(formatter);
+    public Transaction(LocalDate date, LocalTime time, String description, String vendor, Double amount) {
+        this.date = date;
+        this.time = time;
+        this.description = description;
+        this.vendor = vendor;
+        this.amount = amount;
     }
 
-    public String getTime(){
-        DateTimeFormatter formatter= DateTimeFormatter.ofPattern("HH:mm:ss");
-        return dateTime.format(formatter);
+    public String getDescription() {
+        return description;
+    }
+
+
+    public String getVendor() {
+        return vendor;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+    public LocalDate getDate(){
+        return date;
+    }
+
+    public LocalTime getTime(){
+        return time;
+    }
+    public LocalDateTime dateTime(){
+        LocalDateTime dateTime = LocalDateTime.of(date, time);
+        return dateTime;
     }
     public String toTableFormat(String format){
         return String.format(
-                format, getDate(), getTime(), description(),vendor(),amount()
+                format, date, time, description, vendor, amount
         );
     }
 
     @Override
     public String toString() {
-        return  dateTime.format(stringFormat) +
+        return  date +
+                "|" + time +
                 "|" + description +
                 "|" + vendor +
                 "|" + amount ;

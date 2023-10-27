@@ -22,9 +22,9 @@ public class LedgerMenu {
         boolean running = true;
         while (running) {
             System.out.println("""
-                    =================================
-                        LEDGER MENU
-                    =================================
+                    ===========================================
+                                    LEDGER MENU
+                    ===========================================
                     Please Select One of the Following Options:
                     A) All
                     D) Deposits

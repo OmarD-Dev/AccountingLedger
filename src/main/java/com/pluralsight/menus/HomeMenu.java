@@ -29,9 +29,9 @@ public class HomeMenu {
         boolean running = true;
         while (running) {
             System.out.println(""" 
-                    =========================================
-                          Welcome to TransactionApp
-                    =========================================      
+                    ==========================================
+                          Welcome to The Accounting Ledger
+                    ==========================================      
                     Please Select One of the Following Options:
                     D) Add Deposit
                     P) Make Payment

@@ -24,7 +24,7 @@ public class ReportsMenu {
         while (running) {
             System.out.println("""
                     =================================
-                            REPORTS MENU
+                              REPORTS MENU
                     =================================
                     Choose an option:
                     1) Month To Date

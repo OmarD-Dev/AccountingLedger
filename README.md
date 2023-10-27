@@ -5,7 +5,7 @@ AccountingLedger is a simple Java application that allows users to manage transa
 ## Table of Contents
 - [Features](#features)
 - [Usage](#usage)
-- [Unique Code](#UniqueCode)
+- [Unique Code](#uniquecode)
 
 ## Features
 - **Add Deposit**: Users can add deposits with specific date, time, description, vendor, and amount.
@@ -29,14 +29,12 @@ AccountingLedger is a simple Java application that allows users to manage transa
 - Enter description, vendor, and amount for the payment. The amount should be entered as negative.
 
 4. **View Ledger**:
-5. ![Screenshot](images/LedgerMenu.png)
+![Screenshot](images/LedgerMenu.png)
 - In the ledger menu, you can choose different options to view transactions, deposits, payments, view reports, and return to the main menu.
   
  
-  
-
 5. **Generate Reports**:
-     ![Screenshot](images/ReportsMenu.png)
+![Screenshot](images/ReportsMenu.png)
 - Choose specific options to generate reports based on different criteria, such as time periods, vendors, and custom searches.
   
   

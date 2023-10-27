@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FinancialTracker {
+    //Start our application here and pass in Scanner and ArrayList to the Menus
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Transaction> transactions = FileHelper.loadTransactions();

@@ -13,6 +13,7 @@ import java.util.Collections;
 public class FileHelper {
     public static final String FILE_NAME = "transactions.csv";
 
+    //Reads transactions.csv to load up transactions into the ArrayList
     public static ArrayList<Transaction> loadTransactions() {
         ArrayList<Transaction> transactions = new ArrayList<>();
         try {
@@ -22,7 +23,7 @@ public class FileHelper {
                 String[] parts = line.split("\\|");
                 if (parts.length == 5) {
                     LocalDate date = LocalDate.parse(parts[0].trim());
-                    LocalTime time = LocalTime.parse(parts[1].trim()); // Combine date and time parts
+                    LocalTime time = LocalTime.parse(parts[1].trim());
                     String description = parts[2].trim();
                     String vendor = parts[3].trim();
                     double amount = Double.parseDouble(parts[4].trim());
@@ -40,7 +41,7 @@ public class FileHelper {
             throw new RuntimeException(e);
         }
     }
-
+    //Sorts Array list by comparing a transactions' dateTime
     public static void sortByDate(ArrayList<Transaction> transactionsCopy) {
         Collections.sort(transactionsCopy, (t1, t2) -> {
             return t2.dateTime().compareTo(t1.dateTime());

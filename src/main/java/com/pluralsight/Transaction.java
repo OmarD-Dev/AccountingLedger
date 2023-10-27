@@ -40,6 +40,7 @@ public class Transaction {
     public LocalTime getTime(){
         return time;
     }
+    //Created a LocalDateTime to make comparisons easier.
     public LocalDateTime dateTime(){
         LocalDateTime dateTime = LocalDateTime.of(date, time);
         return dateTime;

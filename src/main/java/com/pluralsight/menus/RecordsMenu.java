@@ -4,6 +4,7 @@ import com.pluralsight.Transaction;
 import com.pluralsight.utils.FileHelper;
 import com.pluralsight.utils.PrintHelper;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.YearMonth;
 import java.util.ArrayList;
@@ -54,6 +55,9 @@ public class RecordsMenu {
                     System.out.println("Enter Vendor Name");
                     String vendorName = scanner.nextLine();
                     filterTransactionsByVendor(vendorName);
+                    break;
+                case "6":
+                    customSearch();
                     break;
                 case "0":
                     running = false;
@@ -179,6 +183,69 @@ public class RecordsMenu {
 
         PrintHelper.printClosingLine();
     }
+    private void customSearch() {
+        System.out.println("For a custom search please enter the following information or leave areas blank to not filter for them.");
+        System.out.println("Search by start date (yyyy-MM-dd):");
+        String startDate = scanner.nextLine();
+        System.out.println("Search by end date (yyyy-MM-dd):");
+        String endDate = scanner.nextLine();
+        System.out.println("Search by description: ");
+        String description = scanner.nextLine();
+        System.out.println("Search by vendor:");
+        String vendor = scanner.nextLine();
+        System.out.println("Search by amount:");
+        String amount = scanner.nextLine();
+
+        // create a new empty array -> inserting the valid transactions
+        ArrayList<Transaction> validTransactions = new ArrayList<>();
+        FileHelper.sortByDate(validTransactions);
+        for (Transaction transaction : transactions) {
+            if (
+                    isAfterStartDate(startDate, transaction.getDate()) &&
+                            isBeforeEndDate(endDate, transaction.getDate()) &&
+                            containsDescription(description, transaction.getDescription()) &&
+                            isSameVendor(vendor, transaction.getVendor()) &&
+                            isSameAmount(amount, transaction.getAmount())
+            ) {
+                validTransactions.add(transaction);
+            }
+        }
+
+        PrintHelper.printAllHeader();
+
+        for (Transaction t : validTransactions) {
+            String type = t.getAmount() >= 0 ? "Deposit" : "Payment";
+            System.out.printf("%-20s%-15s%-20s%-20s%-15s%-10.2f\n", t.getDate(), t.getTime(), t.getDescription(),
+                    t.getVendor(), type, t.getAmount());
+        }
+        PrintHelper.printClosingLine();
+    }
+    // Create methods that return booleans to see if a field should be filtered or not
+    private boolean isAfterStartDate(String inputStartDate, LocalDate transactionDate) {
+        if (inputStartDate.equals("")) return true;
+        LocalDate inputAsLocalDate = LocalDate.parse(inputStartDate);
+        return transactionDate.compareTo(inputAsLocalDate) > 0;
+
+    }
+
+    private boolean isBeforeEndDate(String inputEndDate, LocalDate transactionDate) {
+        if (inputEndDate.equals("")) return true;
+        LocalDate inputAsLocalDate = LocalDate.parse(inputEndDate);
+        return transactionDate.compareTo(inputAsLocalDate) < 0;
+    }
+
+    private boolean containsDescription(String inputDescription, String transactionDescription) {
+        return transactionDescription.contains(inputDescription);
+    }
+
+    private boolean isSameVendor(String inputVendor, String transactionVendor) {
+        return inputVendor.equals("") || inputVendor.equals(transactionVendor);
+    }
+
+    private boolean isSameAmount(String inputAmount, double transactionAmount) {
+        return inputAmount.equals("") || transactionAmount == Double.parseDouble(inputAmount);
+    }
+
 
 }
 

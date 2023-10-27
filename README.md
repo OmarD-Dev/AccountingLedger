@@ -20,19 +20,19 @@ AccountingLedger is a simple Java application that allows users to manage transa
    
 
 3. **Add Deposit**:
-   - Enter date and time (yyyy-MM-dd) or leave empty for the current date/time.
-   - Enter description, vendor, and amount for the deposit.
+- Enter date and time (yyyy-MM-dd) or leave empty for the current date/time.
+- Enter description, vendor, and amount for the deposit.
    
 
 4. **Make Payment**:
-   - Enter date and time (yyyy-MM-dd) or leave empty for the current date/time.
-   - Enter description, vendor, and amount for the payment. The amount should be entered as negative.
+- Enter date and time (yyyy-MM-dd) or leave empty for the current date/time.
+- Enter description, vendor, and amount for the payment. The amount should be entered as negative.
    
 
 
 4. **View Ledger**:
  
-   - In the ledger menu, you can choose different options to view transactions, deposits, payments, view reports, and return to the main menu.
+- In the ledger menu, you can choose different options to view transactions, deposits, payments, view reports, and return to the main menu.
 
 ![Ledger Menu Screenshot](images/LedgerMenu.png)
    
@@ -40,13 +40,16 @@ AccountingLedger is a simple Java application that allows users to manage transa
 
 6. **Generate Reports**:
 
-   - Choose specific options to generate reports based on different criteria, such as time periods, vendors, and custom searches.
+- Choose specific options to generate reports based on different criteria, such as time periods, vendors, and custom searches.
 
    ![Reports Menu Screenshot](images/ReportsMenu.png)
    
 
 ## Unique Code
+
+- A particular piece of code I found unique to create was the custom search method. This method prompts the user for information on which fields to filter the transactions Array List. I was able to achieve this by creating multiple methods that returned booleans for each input field and using those within the custom search.
+
+
 ![Custom Search Code Part 1](images/customSearchOne.png)
 ![Custom Search Code Part 2](images/customSearchTwo.png)
 
-A particular piece of code I found unique to create was the custom search method. This method prompts the user for information on which fields to filter the transactions Array List. I was able to achieve this by creating multiple methods that returned booleans for each input field and using those within the custom search.

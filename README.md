@@ -14,30 +14,35 @@ AccountingLedger is a simple Java application that allows users to manage transa
 - **Generate Reports**: Users can generate various reports, such as Month To Date, Previous Month, Year To Date, Previous Year, transactions by a specific vendor, and custom search based on filters like start date, end date, description, vendor, and amount.
 
 ## Usage
-![Main Menu](images/HomeMenu.png)
 1. **Main Menu**: Upon running the application, you'll be presented with the main menu where you can choose different options as shown below:
+
+![Main Menu](images/HomeMenu.png)
    
 
-2. **Add Deposit**:
+3. **Add Deposit**:
    - Enter date and time (yyyy-MM-dd) or leave empty for the current date/time.
    - Enter description, vendor, and amount for the deposit.
    
 
-3. **Make Payment**:
+4. **Make Payment**:
    - Enter date and time (yyyy-MM-dd) or leave empty for the current date/time.
    - Enter description, vendor, and amount for the payment. The amount should be entered as negative.
    
-![Ledger Menu Screenshot](images/LedgerMenu.png)
+
 
 4. **View Ledger**:
  
    - In the ledger menu, you can choose different options to view transactions, deposits, payments, view reports, and return to the main menu.
+
+![Ledger Menu Screenshot](images/LedgerMenu.png)
    
-![Reports Menu Screenshot](images/ReportsMenu.png)
+
 
 6. **Generate Reports**:
 
    - Choose specific options to generate reports based on different criteria, such as time periods, vendors, and custom searches.
+
+   ![Reports Menu Screenshot](images/ReportsMenu.png)
    
 
 ## Unique Code

@@ -5,7 +5,7 @@ AccountingLedger is a simple Java application that allows users to manage transa
 ## Table of Contents
 - [Features](#features)
 - [Usage](#usage)
-- [Unique Code](#Unique Code)
+- [Unique Code](#UniqueCode)
 
 ## Features
 - **Add Deposit**: Users can add deposits with specific date, time, description, vendor, and amount.
@@ -15,9 +15,9 @@ AccountingLedger is a simple Java application that allows users to manage transa
 
 
 ## Usage
+![Screenshot](images/HomeMenu.png)
 1. **Main Menu**: Upon running the application, you'll be presented with the main menu where you can choose different options as shown below:
    
-![Screenshot](images/HomeMenu.png)
 
 
 3. **Add Deposit**:
@@ -29,21 +29,23 @@ AccountingLedger is a simple Java application that allows users to manage transa
 - Enter description, vendor, and amount for the payment. The amount should be entered as negative.
 
 4. **View Ledger**:
+5. ![Screenshot](images/LedgerMenu.png)
 - In the ledger menu, you can choose different options to view transactions, deposits, payments, view reports, and return to the main menu.
   
-  ![Screenshot](images/LedgerMenu.png)
+ 
   
 
 5. **Generate Reports**:
+     ![Screenshot](images/ReportsMenu.png)
 - Choose specific options to generate reports based on different criteria, such as time periods, vendors, and custom searches.
   
-  ![Screenshot](images/ReportsMenu.png)
+  
 
-## Unique Code:
+## Unique Code
+![Screenshot](images/customSearchOne.png) ![Screenshot](images/customSearchTwo.png)
+
 A particular piece of code I found unique to create was the custom search method. This method prompts the user for information on which fields to filter the transactions Array List. I was able to 
 achieve this by creating multiple methods that returned booleans for each input field and using those within the custom search.
-
-![Screenshot](images/customSearchOne.png) ![Screenshot](images/customSearchTwo.png)
 
 
 
